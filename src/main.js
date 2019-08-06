@@ -4,7 +4,7 @@ import App from './App.vue'
 Vue.config.productionTip = false
 
 var mqtt = require('mqtt')
-var brokerUrl = 'mqtt://test.mosquitto.org';
+var brokerUrl = 'mqtt://broker.hivemq.com';
 
 console.log("Connecting to: " + brokerUrl);
 var client = mqtt.connect(brokerUrl)
@@ -25,5 +25,5 @@ client.on('message', function (topic, message) {
 })
 
 new Vue({
-  render: h => h(App),
+    render: h => h(App),
 }).$mount('#app')
